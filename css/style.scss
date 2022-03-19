@@ -162,16 +162,94 @@
 }
 
 
+//======================news=============================//
+.suanews-c{
+    position: relative;
+    width:100%;
+}
+.suanews-container{
+    // display: flex;
+    width: 100% !important;
+
+    padding:0 30px 0 30px;
+
+    @media(min-width:640px){
+        padding:0 35px 0 35px;
+    }
+}
+
+.suanews{
+    max-width: 100%;
+    padding:20px;
+    max-width: 360px;
+}
+
+.suanews-img{
+    position:relative;
+    display: inline-block;
+    
+    img{
+        width:100% !important;
+        height:100% !important;
+    }
+
+    &:hover .suanews-img-overlay{
+      opacity: 1 !important;
+    }
+}
+
+.suanews-img-overlay{
+    display: flex ;
+    position: absolute;
+    opacity: 0;
+    top:0;
+    left:0;
+    height: 100% !important;
+    width:100%  !important;
+    background-color: rgba(54, 100, 226,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: opacity .3s  ease-in-out;
+    div{
+        background-color: #fff;
+        width:45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        img{
+            width:25px !important;
+            height: 25px !important;
+        }
+    }
+ 
+}
+.suanews-title{
+    margin-top:20px;
+    h2{
+        color: #535353!important;
+        font-size: 1.3rem !important;
+        text-transform: uppercase !important;
+        text-align: left !important;
+    }
+}
+
+.suanews-excerpt{
+    p{
+        font-size:1.2rem;
+    }
+}
 
 
+#newsPrevButton{
+}
 
-
-
-
-
-
-
-
+#newsNextButton{
+   
+}
 
 
 

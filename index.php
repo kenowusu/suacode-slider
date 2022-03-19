@@ -60,7 +60,7 @@ function suacode_slider($atts){
                         </div>
                         <!--------end of slide--->
                <?php endwhile;?>
-               <?wp_reset_postdata();?>
+               <?php wp_reset_postdata();?>
                          </div>
                            </div>
                 <?php else:?>
@@ -69,3 +69,46 @@ function suacode_slider($atts){
                 <?php return ob_get_clean();?>
 <?php }; ?>
 <?php add_shortcode('suacode_slider','suacode_slider');?>
+<?php function suacode_news(){
+    ob_start();?>
+    <div class="suanews-c">    
+        <!-- slider buttons -->
+        <button  class="suaslider-btn left" id="newsPrevButton"><?php echo file_get_contents(plugins_url( '/img/left-arrow.svg', __FILE__ ));?></span></button>
+        <button class="suaslider-btn right" id="newsNextButton"><?php echo file_get_contents(plugins_url( '/img/right-arrow.svg', __FILE__ ));?></span></button>
+        <div class="suanews-container">     
+             <?php
+                $args = array(
+                           'post_type'=>'news',
+                );
+                $news_posts = new WP_Query($args);
+                if($news_posts->have_posts()) :
+                while($news_posts->have_posts()) :
+                $news_posts->the_post();?>
+                        <!-- start of slide -->
+                        <div class="suanews">
+                            <a href="<?php the_permalink();?>"  target="_blank" class="suanews-img">
+                                <?php the_post_thumbnail(363,254);?>
+                                <div class="suanews-img-overlay">
+                                    <div><img src="<?php echo plugins_url( '/img/link.svg', __FILE__ );?>" alt=""></div>
+                                    
+                                </div>
+                            </a>
+                            <div class="suanews-title">
+                            <h2><?php the_title();?></h2>
+                            </div>
+                            <!-- <div class="suanews-excerpt">
+                                <p></p>    
+                            </div> -->
+                        </div>
+                        
+                        <!--------end of slide--->
+               <?php endwhile;?>
+               <?php wp_reset_postdata();?>
+                           </div>
+                           <div>
+                <?php else:?>
+                <p>No Latest News</p>
+                <?php endif;?>
+                <?php return ob_get_clean();?>
+<?php };?>
+<?php add_shortcode('suacode_news','suacode_news');?>

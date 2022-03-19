@@ -1,17 +1,18 @@
-const suaslider = jQuery('.suaslider-container');
+const slider = jQuery('.suaslider-container');
 const prevButton = jQuery("#myPrevButton");
 const nextButton = jQuery("#myNextButton");
 
-
-suaslider.slick({
+const  news = jQuery('.suanews-container');
+const newsPrevButton = jQuery('#newsPrevButton');
+const newsNextButton = jQuery('#newsNextButton');
+slider.slick({
+    mobileFirst:true,
     infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows:true,
     prevArrow:prevButton,
     nextArrow:nextButton,
-    mobileFirst:true,
-    // centerPadding:40,
 
     responsive: [
         {
@@ -21,16 +22,41 @@ suaslider.slick({
             slidesToShow: 2,
             slidesToScroll: 1,
           }
-        },
+        }
+      ]
+  });
 
+  //===========slick news ===========
+  news.slick({
+    mobileFirst:true,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:true,
+    prevArrow:newsPrevButton,
+    nextArrow:newsNextButton,
+
+    responsive: [
         {
-          breakpoint:1024,
+          breakpoint:640,
           settings: {
             arrows: true,
             slidesToShow: 2,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
           }
         },
 
+        {
+          breakpoint:640,
+          settings: {
+            arrows: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
+
+
       ]
   });
+
+  
