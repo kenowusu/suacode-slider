@@ -13,6 +13,8 @@ slider.slick({
     arrows:true,
     prevArrow:prevButton,
     nextArrow:nextButton,
+    draggable:false,
+
 
     responsive: [
         {
@@ -35,7 +37,7 @@ slider.slick({
     arrows:true,
     prevArrow:newsPrevButton,
     nextArrow:newsNextButton,
-
+    draggable:false,
     responsive: [
         {
           breakpoint:640,
@@ -47,7 +49,7 @@ slider.slick({
         },
 
         {
-          breakpoint:640,
+          breakpoint:1060,
           settings: {
             arrows: true,
             slidesToShow: 3,

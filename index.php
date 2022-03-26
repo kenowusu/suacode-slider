@@ -14,14 +14,14 @@
         add_action('wp_enqueue_scripts','suacode_js');
 
         function suacode_stylesheet() {
-        wp_enqueue_style( 'suacode_slider_style', plugins_url('/css/style.css', __FILE__),null,null);
+        wp_enqueue_style( 'suacode_slider_style', plugins_url('/css/style.css', __FILE__),null,'0.1.2');
         }
         
         function slick_js() {
                 wp_enqueue_script( 'slick_js',plugins_url( '/js/slick.js', __FILE__ ),array('jquery'));
         }
         function suacode_js() {
-        wp_enqueue_script( 'suacode_slider_js', plugins_url( '/js/script.js', __FILE__ ),array('jquery','slick_js'),null,true);
+        wp_enqueue_script( 'suacode_slider_js', plugins_url( '/js/script.js', __FILE__ ),array('jquery','slick_js'),'0.1.3',true);
         }?>
 <?php 
 function suacode_slider($atts){
@@ -35,6 +35,7 @@ function suacode_slider($atts){
                <?php
                 $args = array(
                            'post_type'=>'testimonials',
+                           'posts_per_page'=>-1,
                 );
 
                 $testimonial_posts = new WP_Query($args);
@@ -79,6 +80,8 @@ function suacode_slider($atts){
              <?php
                 $args = array(
                            'post_type'=>'news',
+                           'posts_per_page'=>-1,
+                        
                 );
                 $news_posts = new WP_Query($args);
                 if($news_posts->have_posts()) :
@@ -96,9 +99,9 @@ function suacode_slider($atts){
                             <div class="suanews-title">
                             <h2><?php the_title();?></h2>
                             </div>
-                            <!-- <div class="suanews-excerpt">
-                                <p></p>    
-                            </div> -->
+                            <div class="suanews-excerpt">
+                                <p><?php echo get_the_date();?></p>    
+                            </div>
                         </div>
                         
                         <!--------end of slide--->

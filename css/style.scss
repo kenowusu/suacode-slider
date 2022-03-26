@@ -187,6 +187,13 @@
 .suanews-img{
     position:relative;
     display: inline-block;
+    width:100% !important;
+    height:219px !important;
+
+    @media(min-width:640px){
+        width:290px !important;
+        height:215.67px !important;
+    }
     
     img{
         width:100% !important;
@@ -234,12 +241,14 @@
         font-size: 1.3rem !important;
         text-transform: uppercase !important;
         text-align: left !important;
+        font-weight:bold !important;
     }
 }
 
 .suanews-excerpt{
     p{
-        font-size:1.2rem;
+        font-size:1rem;
+        text-align: left !important;
     }
 }
 
