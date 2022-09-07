@@ -1,8 +1,6 @@
 ## About
-So a friend who happens to be a web developer at suacode.ai hit me up and was like he is using a prebuilt  theme but was not happy with the testimonial slider that comes with the theme. He had already struggled installing dozens of plugins just to get a good testimonial slider working.
 
-I came up with the idea of developing this plugin for him using wordpress shortcode. The plugins works by extracting custom postTypes named testimonial and putting them in a slider.The slider uses the Jquery slick slider plugin
-
+A wordpress shortcode plugin for suacode.ai testimonial  and blog carousel section.. The plugin works by extracting custom PostTypes named Testimonial and putting them in a slider.The slider uses the Jquery slick slider plugin
 
 Slider can be found on https://suacode.ai 
 
